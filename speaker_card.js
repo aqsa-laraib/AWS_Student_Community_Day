@@ -30,20 +30,21 @@ window.addEventListener("scroll", handleScroll);
 document.addEventListener("DOMContentLoaded", handleScroll);
 
 // Smart Search - Task C
-document.getElementById('speakerSearch').addEventListener('input', function () {
-  const query = this.value.toLowerCase().trim();
-  const cards = document.querySelectorAll('.speaker-card');
-
-  cards.forEach(card => {
-    const details = card.querySelector('.speaker-details');
-    const allText = details ? details.innerText.toLowerCase() : '';
-
-    if (allText.includes(query)) {
-      card.style.display = 'block';
-      card.classList.add('show');
-    } else {
-      card.style.display = 'none';
-      card.classList.remove('show');
-    }
+// Smart Search - Task C
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById('speakerSearch').addEventListener('input', function () {
+    const query = this.value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.speaker-card');
+    cards.forEach(card => {
+      const details = card.querySelector('.speaker-details');
+      const allText = details ? details.innerText.toLowerCase() : '';
+      if (allText.includes(query)) {
+        card.style.display = 'block';
+        card.classList.add('show');
+      } else {
+        card.style.display = 'none';
+        card.classList.remove('show');
+      }
+    });
   });
 });
