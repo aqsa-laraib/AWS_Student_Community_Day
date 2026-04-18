@@ -28,6 +28,7 @@ window.addEventListener("scroll", handleScroll);
 
 // Initially check the elements in view on page load
 document.addEventListener("DOMContentLoaded", handleScroll);
+
 // Smart Search - Task C
 document.getElementById('speakerSearch').addEventListener('input', function () {
   const query = this.value.toLowerCase().trim();
@@ -39,8 +40,10 @@ document.getElementById('speakerSearch').addEventListener('input', function () {
 
     if (allText.includes(query)) {
       card.style.display = 'block';
+      card.classList.add('show');
     } else {
       card.style.display = 'none';
+      card.classList.remove('show');
     }
   });
 });
