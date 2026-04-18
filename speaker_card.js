@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", handleScroll);
 
 // Smart Search - Task C
 // Smart Search - Task C
+console.log("JS LOADED");
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById('speakerSearch').addEventListener('input', function () {
     const query = this.value.toLowerCase().trim();
