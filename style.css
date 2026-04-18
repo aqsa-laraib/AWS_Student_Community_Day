@@ -902,3 +902,29 @@ iframe {
     padding: 0 0px;
   }
 }
+/* Smart Search Bar */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 30px auto;
+}
+
+#speakerSearch {
+  width: 60%;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #FF9900;
+  font-size: 1rem;
+  outline: none;
+  background-color: #1a1a1a;
+  color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+#speakerSearch::placeholder {
+  color: #aaa;
+}
+
+#speakerSearch:focus {
+  box-shadow: 0 0 10px #FF9900;
+}
