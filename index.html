@@ -1032,13 +1032,14 @@
     <script>
       const sponsorLogos = document.querySelectorAll(".sponsor-logo");
       const sponsorCount = sponsorLogos.length;
-      document.documentElement.style.setProperty(
-        "--sponsor-count",
-        sponsorCount
-      );
-      document
-        .querySelector(".sponsor-bar")
-        .appendChild(sponsorLogos[0].cloneNode(true));
+      
+      document.documentElement.style.setProperty("--sponsor-count", sponsorCount);
+      
+      const bar = document.querySelector(".sponsor-bar");
+      
+      if (bar && sponsorLogos.length > 0) {
+        bar.appendChild(sponsorLogos[0].cloneNode(true));
+      }
     </script>
 
     <!-- Google tag (gtag.js) -->
