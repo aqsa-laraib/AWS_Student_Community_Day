@@ -28,3 +28,19 @@ window.addEventListener("scroll", handleScroll);
 
 // Initially check the elements in view on page load
 document.addEventListener("DOMContentLoaded", handleScroll);
+// Smart Search - Task C
+document.getElementById('speakerSearch').addEventListener('input', function () {
+  const query = this.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.speaker-card');
+
+  cards.forEach(card => {
+    const details = card.querySelector('.speaker-details');
+    const allText = details ? details.innerText.toLowerCase() : '';
+
+    if (allText.includes(query)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
