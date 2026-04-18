@@ -2,12 +2,15 @@
 const eventDate = new Date(2024, 1, 3, 9, 0, 0); // February 3, 2024, 09:00:00
 
 function updateCountdown() {
+
+  if (!document.getElementById("days")) return;
+
   const now = new Date().getTime();
   const distance = eventDate - now;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -16,6 +19,19 @@ function updateCountdown() {
   document.getElementById("hours").innerHTML = hours;
   document.getElementById("minutes").innerHTML = minutes;
   document.getElementById("seconds").innerHTML = seconds;
+
+  if (distance < 0) {
+    clearInterval(countdown);
+
+    const text = document.getElementById("countdown-text");
+    if (text) text.innerHTML = "The event has started!";
+
+    const clock = document.getElementById("countdown-clock");
+    if (clock) clock.style.display = "none";
+  }
+}
+
+  
 
   if (distance < 0) {
     clearInterval(countdown);
